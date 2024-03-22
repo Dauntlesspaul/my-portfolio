@@ -1,24 +1,26 @@
 import React from "react";
 import { useForm, ValidationError } from '@formspree/react';
-import { useEffect,useState } from "react";
+import { useEffect} from "react";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import logo from './my-logo.png'
 import multi from './multi-step-form.png'
 import cal from './calculator.png'
-import { faCircleChevronRight,faCircleChevronLeft,faArrowUpRightFromSquare,faDownload} from "@fortawesome/free-solid-svg-icons";
+import gridnews from './gridnews2.png'
+import {faAngleLeft,faAngleRight,faArrowUpRightFromSquare,faDownload} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub,faXTwitter,faLinkedin ,faWhatsapp,faHtml5,faCss3Alt,faSass,faBootstrap,faSquareJs,faGitAlt,faReact} from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
-library.add(faGithub,faXTwitter,faLinkedin,faWhatsapp,faHtml5,faCss3Alt,faSass,faBootstrap,faSquareJs,faGitAlt,faReact,faCircleChevronRight,faCircleChevronLeft,faArrowUpRightFromSquare,faDownload)
+import pdf from './Dauntless-dev-resume.pdf'
+library.add(faGithub,faAngleLeft,faXTwitter, faAngleRight, faLinkedin,faWhatsapp,faHtml5,faCss3Alt,faSass,faBootstrap,faSquareJs,faGitAlt,faReact,faArrowUpRightFromSquare,faDownload)
 const Home=()=>{
    const [state, handleSubmit] = useForm("xayrolre");
-    const [count,setCount] = useState(0);
     useEffect(()=>{
       setInterval(()=>{
           document.getElementById('animate').innerHTML="<span>I</span><span>'</span><span>m</span>&nbsp;<span>d</span><span>a</span><span>u</span><span>n</span><span>t</span><span>l</span><span>e</span><span>s</span><span>s</span>&nbsp;<span>d</span><span>e</span><span>v</span>"
   
       },4000
      )
+     document.getElementById('firstInd').classList.add('active')
     },[]) 
     
    useEffect(()=>{
@@ -29,32 +31,53 @@ const Home=()=>{
 },[state.result]);
 
  const next=()=>{
-    setCount((count)=>{
-       return  count+=1}      
-) 
-  document.getElementById('left').style.visibility="visible";
-  document.getElementById('img_grid').children[count+1].style.display="block";
-  document.getElementById('img_grid').children[count].style.display="none";
-  const number = document.getElementById('img_grid').children.length;
-  if(number===count+3){
-    document.getElementById('right').style.visibility="hidden"; 
-  }
+
+  const x = document.getElementById('scroll-body').scrollLeft;
+
+  if(x<640){
+   
+    document.getElementById('scroll-body').scrollLeft=x + 320
+
     } 
-const prev=()=>{
-    setCount((count)=>{
-       return  count-=1}
-)
-document.getElementById('img_grid').children[count].style.display="none";
-document.getElementById('img_grid').children[count-1].style.display="block";
-if(count===1){
-    document.getElementById('left').style.visibility="hidden";
 }
-document.getElementById('right').style.visibility="visible";
+
+const prev=()=>{
+
+const x = document.getElementById('scroll-body').scrollLeft;
+
+if(x>0){
+ document.getElementById('scroll-body').scrollLeft=x-320
+}
 } 
 
 const removeClass = ()=>{
   document.getElementById('curtain').classList.remove('curtain_toggle')
   document.getElementById('container').classList.remove('blurry')
+  document.getElementById('check').checked=false
+}
+
+const myScroll = ()=>{
+  const x = document.getElementById('scroll-body').scrollLeft;
+  const secondInd = document.getElementById('secondInd')
+  const thirdInd = document.getElementById('thirdInd')
+  const firstInd = document.getElementById('firstInd')
+
+    if(x>=640){
+      secondInd.classList.remove('active')
+      thirdInd.classList.add('active')
+      firstInd.classList.remove('active')
+    }
+   else if(x>319 && x<640){
+      secondInd.classList.add('active')
+      thirdInd.classList.remove('active')
+      firstInd.classList.remove('active')
+     }
+    else{
+      secondInd.classList.remove('active')
+      thirdInd.classList.remove('active')
+      firstInd.classList.add('active')
+    } 
+  
 }
  return(<>
  <main>
@@ -70,7 +93,7 @@ const removeClass = ()=>{
  <div className="center_div"><h2>I am a proficient Front-end Developer, vast in creating visual and interactive elements of websites and web applications with seamseamless and engaging user experience </h2></div>
  <div className="contact_layout">
   <div className="flex">
-  <div className="resume">Resumé &nbsp; <FontAwesomeIcon icon="fa-solid fa-download" /></div>
+ <a href={pdf} target="_blank" rel="noopener noreferrer"> <div className="resume">Resumé &nbsp; <FontAwesomeIcon icon="fa-solid fa-download" /></div></a>
    <div class="contact_container">
     <Link to="https://github.com/Dauntlesspaul"><FontAwesomeIcon icon="fa-brands fa-github" className="github" /></Link>
     <Link to="https://twitter.com/WitsPaul"><FontAwesomeIcon icon="fa-brands fa-x-twitter" className="x" /></Link>
@@ -115,23 +138,47 @@ const removeClass = ()=>{
   <div className="project_layout">
     <fieldset className="project_fieldset">
         <legend>&nbsp; My Projects&nbsp;</legend>
-        <div id="img_grid" className="img_grid">
-            <div className="temp_bg">
-                <div className="img-set"><img src={multi} alt="dove1"/></div>
-                <Link to="https://dauntlesspaul.github.io/Multi-step-form/" target="_blanck"><div>This subscription form is user-friendly and responsive, featuring a multi-step design that enhances clarity and efficiency. It offers flexibility in plan selection, ensuring a smooth user experience across different devices</div>
-                <div className="visit_link"><FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" /></div></Link>
+    
+        <div id="scroll-body" onScroll={myScroll} className="scroll-body">
+            <div className="block"> <div className="img-set"><img src={gridnews} alt="gridnews"/></div>
+              <Link to="https://gridnews.onrender.com/" target="_blanck">
+                <span><b>BLOG SITE</b><br/>Gridnews is a news platform featuring responsive design and clear navigation, allowing users to effortlessly explore content via organized structures and user-friendly menus. </span>
+                <div className="visit_link"><FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" /></div>
+              </Link>
             </div>
-            <div className="temp_bg">
-            <div className="img-set"><img src={cal} alt="dove1"/></div>
-                <Link to="https://dauntlesspaul.github.io/Front-end-Mentor-challenge-Calculator-app/" target="_blanck"><div>Numerical calculator designed with an intuitive and visually appealing user interface that accommodates various themes. Users should be able to switch between different themes easily to personalize their experience</div>
-                <div className="visit_link"><FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" /></div></Link>
+            <div className="block"> <div className="img-set"><img src={multi} alt="dove1"/></div>
+              <Link to="https://dauntlesspaul.github.io/Multi-step-form/" target="_blanck">
+                <span><b>SUBSCRIPTION FORM</b><br/>This is a multi-step subscription form craftily designed to offer flexibility in plan selection, ensuring a smooth user experience across different devices</span>
+                <div className="visit_link"><FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" /></div>
+              </Link> 
             </div>
-            <div className="controller"><button id="left" className="left"><FontAwesomeIcon className="chevron-left" onClick={prev} icon="fa-solid fa-circle-chevron-left" /></button><button id="right" className="right"><FontAwesomeIcon className="chevron-right" onClick={next} icon="fa-solid fa-circle-chevron-right" /></button></div>
+            <div className="block"> <div className="img-set"><img src={cal} alt="dove1"/></div>
+              <Link to="https://dauntlesspaul.github.io/Front-end-Mentor-challenge-Calculator-app/" target="_blanck">
+                <span><b>NUMERICAL CALCULATOR </b><br/> This  design features various themes with visually appealing user interface. Users should be able to switch between different themes easily to personalize their experience</span>
+                <div className="visit_link"><FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" /></div>
+              </Link>
+            </div>
+            
         </div>
     </fieldset>
     <div id="contact" ></div>
   </div>
 </div>
+<div className="carousel-set">
+  <div className="carousel-indicator"> 
+    <span id="firstInd"></span>
+    <span id="secondInd"></span>
+    <span id="thirdInd"></span>
+  </div>
+</div>
+
+<div className="controll-set">
+ <div className="controller">
+  <span onClick={prev} ><FontAwesomeIcon icon="fa-solid fa-angle-left" /></span>
+  <span onClick={next}><FontAwesomeIcon icon="fa-solid fa-angle-right" /></span>
+ </div>
+</div>
+
 <div className="center_div">
   <div className="writeme_layout">
     <form id='myform' method="post" onSubmit={handleSubmit} autoComplete="on">

@@ -6,9 +6,9 @@ import { useEffect } from "react";
 const Layout=()=>{
  useEffect(()=>{
   setTimeout(()=>{
-  document.getElementById('loader').style.display="none";
-  document.getElementById('load_page').style.opacity="1"
-  document.body.style.position="relative"
+ // document.getElementById('loader').style.display="none";
+  //document.getElementById('load_page').style.opacity="1"
+  //document.body.style.position="relative"
   },3000)
  },[])
   return (<>

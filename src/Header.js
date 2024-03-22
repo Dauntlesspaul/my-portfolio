@@ -16,15 +16,16 @@ const theme = ()=>{
  const dom = document.documentElement;
  if(bg_color==='#0d1117'){
     dom.style.setProperty('--body-bg','#fafafa')
-    dom.style.setProperty('--header-footerbg','#ffffff')
+    dom.style.setProperty('--header-footerbg','linear-gradient(180deg,rgb(100, 100, 239) ,rgb(54, 54, 174))')
     dom.style.setProperty('--layout','#ffffff')
     dom.style.setProperty('--body-text','black')
     dom.style.setProperty('--icon-bg','rgb(3, 3, 46)')
     dom.style.setProperty('--icon-shadow','rgb(192, 192, 192)')
-    dom.style.setProperty('--dauntless-color','rgb(3, 3, 46)')
-    dom.style.setProperty('--header-footercolor','rgb(3, 3, 46)')
-    dom.style.setProperty('--headericon-shadow','drop-shadow(5px 5px 10px rgb(192, 192, 192))')
+    dom.style.setProperty('--dauntless-color','rgb(54, 54, 174)')
+    dom.style.setProperty('--headericon-shadow','drop-shadow(2px 2px 5px rgb(192, 192, 192))')
     dom.style.setProperty('--curtain-bg','#151b24')
+    dom.style.setProperty('--skills-icon','rgb(54, 54, 174)')
+    document.getElementById('theme-icon').style.transform="rotate(180deg)"
  }
  else{ 
     dom.style.setProperty('--body-bg','#0d1117')
@@ -35,13 +36,16 @@ const theme = ()=>{
     dom.style.setProperty('--icon-shadow','rgb(68, 68, 223)')
     dom.style.setProperty('--dauntless-color','rgb(68, 68, 223)')
     dom.style.setProperty('--header-footercolor',' aliceblue ')
-    dom.style.setProperty('--headericon-shadow','drop-shadow(5px 5px 10px rgb(68, 68, 223))') 
+    dom.style.setProperty('--headericon-shadow','drop-shadow(2px 2px 5px rgb(68, 68, 223))') 
     dom.style.setProperty('--curtain-bg','#f6f8fa')
+    dom.style.setProperty('--skills-icon','aliceblue')
+    document.getElementById('theme-icon').style.transform="rotate(360deg)"
  }
 }
 const removeClass = ()=>{
     document.getElementById('curtain').classList.remove('curtain_toggle')
     document.getElementById('container').classList.remove('blurry')
+    document.getElementById('check').checked=false
 }
  
 
@@ -50,8 +54,13 @@ return(<>
 <div className="headerGrid">
     <div className="logo"><img src={logo} alt="mylogo"/></div>
     <div className="brand"></div>
-    <div className="switch"><FontAwesomeIcon onClick={theme} className="icon_size" icon="fa-solid fa-circle-half-stroke" /></div>
-    <div id='menu_bar' className="menu"><FontAwesomeIcon onClick={curtainMenu} className="icon_size" icon="fa-solid fa-bars"  /></div>
+    <div className="switch"><FontAwesomeIcon onClick={theme} className="icon_size" id="theme-icon" icon="fa-solid fa-circle-half-stroke" /></div>
+    <div id='menu_bar'  className="menu"><label for="check">
+      <input onClick={curtainMenu} type="checkbox" id="check"/> 
+      <span></span>
+      <span></span>
+      <span></span>
+    </label></div>
 </div>
 <div className="desktopheaderGrid">
     <div className="dlogo"><img src={logo} alt="mylogo"/></div>
