@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Bebas+Neue&family=Bree+Serif&family=Kanit:wght@300;500&family=Kdam+Thmor+Pro&family=League+Spartan:wght@100..900&family=Merriweather+Sans&family=Montserrat:wght@400;500&family=Newsreader:opsz@6..72&family=Oswald&family=Outfit:wght@100..900&family=Poppins&family=Raleway:ital,wght@1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 :root{
     --body-bg:#0d1117;
-    --header-footerbg:#151b24;
+    --header-footerbg:#0d1117;
     --header-footercolor:aliceblue;
     --curtain-bg:#f6f8fa;
     --body-text:hsl(0,0%,100%);
     --icon-bg:aliceblue;
-    --icon-shadow:rgb(68, 68, 223);
-    --layout:#151b24;
-    --layout-shadow:#4a5669;
-    --dauntless-color:rgb(68, 68, 223);
+    --layout:#0d1117;
     --button:linear-gradient(180deg,rgb(100, 100, 239) ,rgb(54, 54, 174));
-    --headericon-shadow: drop-shadow(2px 2px 5px rgb(68, 68, 223));
     --skills-icon:aliceblue;
+    --field-set:rgb(76, 76, 245);
+    --inner-layer: #12161b;
+    --inner-outer-shadow:1px 2px 4px rgb(66, 66, 66) , 1px 3px 10px #030202 inset;
+    --inner-shadow:1px 1px 2px rgb(103, 103, 103);
+    --inner-outer-shadow-footer:1px -2px 4px rgb(66, 66, 66) , 1px 3px 10px #030202 inset;
+
 }
 
 *{
@@ -23,26 +25,18 @@
     -webkit-user-select: none;
     -moz-user-select: none;
 }
-h2{
-    font-size: 0.969em;
-    font-weight: 600;
-    color: var(--body-text);
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
+
 html, body{
     width: 100%;
     height: 100%;
     background-color: var(--body-bg);
     transition: background-color .5s;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'Lato';
     position: relative;//here
     overflow-x: hidden;
     user-select: none;
     scroll-behavior: smooth;
 }
-
-
 
 
 
@@ -56,7 +50,7 @@ html, body{
    }
    
  .menu span{
-     background: #fff;
+     background:var(--header-footercolor);
      border-radius:10px;
      height:5px;
      margin: 2px 0;
@@ -110,6 +104,11 @@ html, body{
 
 .about_fieldset span{
     font-size:16px !important;
+    background:var(--inner-layer);
+    border-radius: 8px;;
+    padding: 8px;
+    box-shadow: var(--inner-shadow);
+    font-family: 'Lato';
 }
 
 .container{
@@ -123,6 +122,7 @@ html, body{
     border-style:solid;
     display:flex;
     align-items: center;
+    justify-content: center;
     border: none;
     z-index: 3;
     background:var(--header-footerbg);
@@ -130,6 +130,7 @@ html, body{
     left: 0;
     right: 0;
     border-radius: 0 0 15px 15px;
+    box-shadow: var(--inner-outer-shadow);
 }
 #theme-icon{
 transition: .2s linear;
@@ -138,11 +139,15 @@ transition: .2s linear;
     display:grid;
     grid-template-areas: "logo brand switch menu";
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 100%;
+    width: 85%;
     text-align: center;
     overflow-x: hidden;
     transition: width 0.5s ease-in;
-    height: 100%;
+    height: max-content;
+    background-color:var(--inner-layer);
+    border-radius: 8px;
+    padding: 1px;
+    box-shadow: var(--inner-shadow)
 }
 .logo{
     grid-area: logo;
@@ -174,7 +179,7 @@ transition: .2s linear;
     height: 85vh;
     position: fixed;
     transition:width 0.5s;
-    margin-top: 61px;
+    margin-top: 68px;
     z-index: 1;
     border-radius: 0 10px 10px 0px;
     overflow-x: hidden;
@@ -213,125 +218,218 @@ nav{
 
 .icon_size{
  font-size: 25px;
- color:aliceblue;
+ color:var(--header-footercolor);
  cursor: pointer;
- filter:var(--headericon-shadow);
 }
 
-.animate {
-	font-size: 30px;
-    margin: 8px 0;
-    font-weight: 700;
-    -webkit-box-reflect: below -8px linear-gradient(transparent, rgba(0,0,0,.2));
+.box {
+    width: 255px;
+    height: 130px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .title {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 50px;
+
+      .block {
+        width: 0%;
+        height: inherit;
+        background: var(--button);
+        position: absolute;
+        animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+        display: flex;
+      }
+
+      h1 {
+        font-family: 'Poppins';
+        color: var(--curtain-bg);
+        font-size: 32px;
+        -webkit-animation: mainFadeIn 2s forwards;
+        -o-animation: mainFadeIn 2s forwards;
+        animation: mainFadeIn 2s forwards;
+        animation-delay: 1.6s;
+        opacity: 0;
+        display: flex;
+        align-items: baseline;
+        position: relative;
+
+        span {
+          width:0px;
+          height: 0px;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+
+          background: var(--button);
+          -webkit-animation: load 0.6s cubic-bezier(.74, .06, .4, .92) forwards;
+          animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+          animation-delay: 2s;
+          margin-left: 5px;
+          margin-top: -10px;
+          position: absolute;
+          bottom: 13px;
+          right: -12px;
+
+        }
+      }
+    }
+
+    .role {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 30px;
+      margin-top: -10px;
+
+      .block {
+        width: 0%;
+        height: inherit;
+        background: #e91e63;
+        position: absolute;
+        animation: secBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+        animation-delay: 2s;
+        display: flex;
+      }
+
+      p {
+        animation: secFadeIn 2s forwards;
+        animation-delay: 3.2s;
+        opacity: 0;
+         font-weight: 400;
+        font-family: 'Lato';
+        color: var(--curtain-bg);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+    }
+  }
+
+
+
+
+
+
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    left: 0;
+
+  }
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
 }
 
-.animate span {
-	display: inline-block;
+@keyframes secBlock {
+  0% {
+    width: 0%;
+    left: 0;
+
+  }
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 
-.animate span:nth-of-type(2) {
-	animation-delay: .05s;
-}
-.animate span:nth-of-type(3) {
-	animation-delay: .1s;
-}
-.animate span:nth-of-type(4) {
-	animation-delay: .15s;
-}
-.animate span:nth-of-type(5) {
-	animation-delay: .2s;
-}
-.animate span:nth-of-type(6) {
-	animation-delay: .25s;
-}
-.animate span:nth-of-type(7) {
-	animation-delay: .3s;
-}
-.animate span:nth-of-type(8) {
-	animation-delay: .35s;
-}
-.animate span:nth-of-type(9) {
-	animation-delay: .4s;
-}
-.animate span:nth-of-type(10) {
-	animation-delay: .45s;
-}
-.animate span:nth-of-type(11) {
-	animation-delay: .5s;
-}
-.animate span:nth-of-type(12) {
-	animation-delay: .55s;
-}
-.animate span:nth-of-type(13) {
-	animation-delay: .6s;
-}
-.animate span:nth-of-type(14) {
-	animation-delay: .65s;
-}
-.animate span:nth-of-type(15) {
-	animation-delay: .7s;
-}
-.animate span:nth-of-type(16) {
-	animation-delay: .75s;
-}
-.animate span:nth-of-type(17) {
-	animation-delay: .8s;
-}
-.animate span:nth-of-type(18) {
-	animation-delay: .85s;
-}
-.animate span:nth-of-type(19) {
-	animation-delay: .9s;
-}
-.animate span:nth-of-type(20) {
-	animation-delay: .95s;
-}
-.animate span:nth-of-type(21) {
-	animation-delay: 1.0s;
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    background: var(--button);
+    border: 0px solid #ddd;
+    opacity: 0;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+    background: var(--button);
+    opacity: 1;
+    bottom: 45px;
+  }
+   65% {
+      width: 7px;
+    height: 7px;
+      bottom: 0px;
+      width: 15px
+   }
+   80% {
+      width: 10px;
+    height: 10px;
+      bottom: 20px
+   }
+  100% {
+    width: 7px;
+    height: 7px;
+    background: var(--button);
+    border: 0px solid #222;
+    bottom: 13px;
+
+  }
 }
 
-.one span {
-	color: var(--dauntless-color);
-	opacity: 0;
-	transform: translate(-150px, -50px) rotate(-180deg) scale(3);
-	animation: revolveScale .4s  forwards;
+@keyframes secFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
+  
 
-@keyframes revolveScale {
-	60% {
-		transform: translate(20px, 20px) rotate(30deg) scale(.3);
-	}
 
-	100% {
-		transform: translate(0) rotate(0) scale(1);
-		opacity: 1;
-	}
+.center_div1 img{
+    border-radius: 50%;
+    height: 160px;
+    width: 160px;
+    border: 10px solid var(--inner-layer);
+    box-sizing: content-box;
+    box-shadow: var(--inner-outer-shadow);
 }
+.flex{
+    display:flex;
+    justify-content: space-between;
+    width: 260px;
+    align-items: center;
+    margin-top: 10px;
+   }
+
 .animation_container{
     width: 100%;
     justify-content: center;
     display: flex;
 }
 
-.intro-img img{
-    width: 65px;
-    height: 75px;
-    animation: logoBlink 1s infinite forwards;
-}
-.intro-img{
-    margin-top: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-@keyframes logoBlink {
-  
-    50%{
-    filter:drop-shadow(3px 3px 10px rgb(79, 79, 174));
-    width: 64px;
-    } 
-}
 .contact_container{
     width: 130px;
     justify-content: space-between;
@@ -349,13 +447,10 @@ nav{
     border-color: rgb(55, 55, 187);
     box-shadow:2px 2px 10px var(--icon-shadow);
 }
-input{
-    cursor: pointer;
-}
 
 .resume{
-    width:105px;
-    height: 32px;
+    width:100px;
+    height: 30px;
     border-style: solid;
     background-color: var(--skills-icon);
     color: var(--layout);
@@ -367,6 +462,7 @@ input{
     align-items: center;
     font-weight: 600;
     font-size: 16px;
+    font-family: 'Lato';
 }
 .contact_layout{
     width: 100%;
@@ -377,15 +473,13 @@ input{
     width: 100%;
     height: 497px;
     padding: 28px 15px;
-    background-color: var(--layout);
+    background: var(--layout);
     box-sizing: border-box;
     border-radius: 12px;
     margin:10px 0 ;
     color: var(--body-text);
-    border-width: 1px;
-    border-style: solid;
-    border-color:#151b24;
-    box-shadow: 1px 1px 5px var(--layout-shadow),  -1px -1px 5px var(--layout-shadow);
+    box-shadow: var(--inner-outer-shadow);
+    height: max-content;
 }
 .skills_layout{
     @extend .writeme_layout;
@@ -408,10 +502,16 @@ input{
     border-radius: 8px;
     padding: 0 10px;
     font-size: 15px;
-    border: 1px solid #0663f7;
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: var(--inner-shadow);
+    margin:5px 0;
 }
+
 input{
     display: block;
+    cursor: pointer;
 }
 label{
     font-size: 13px;
@@ -421,7 +521,7 @@ label{
     display: flex;
     justify-content: center;
     border-style: solid;
-    border-color: rgb(76, 76, 245) ;
+    border-color: var(--field-set) ;
     border-width: .8px;
     border-radius: 5px;
     height: max-content;
@@ -443,7 +543,7 @@ label{
     height: max-content;
 }
 .about_fieldset span{
-    font-size: 14px;
+    font-size: 15px;
 }
 .form_grouped{
     margin: 5px 0;
@@ -452,18 +552,23 @@ label{
 legend{
     color: var(--icon-bg);
     font-size: 18px;
-    text-shadow: 5px 5px  10px var(--icon-shadow);
+    border-radius: 8px;
+    padding: 2px;
+    margin-left: 10px;
 }
 textarea{
-    border: 1px solid #0663f7;
-    margin-top: 5px;
     padding: 5px 10px;
-    box-sizing: border-box;
     font-size: 15px;
+    border: 0;
     width: 100%;
     height: 150px;
     border-radius: 8px;
     cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: 1px 2px 5px rgb(162, 162, 162);
+    margin-top:15px ;
+    margin-bottom: 10px;
 }
 
 input[type=submit]{
@@ -471,7 +576,7 @@ input[type=submit]{
     height: 40px;
     border-radius: 8px;
     background: var(--button);
-    border-width: .2px;
+   border: 0;
     font-size: 15px;
     font-weight: 700;
     color: aliceblue;
@@ -528,8 +633,12 @@ input[type=submit]:hover{
                          "git git";
     gap: 20px 40px;
     margin: 25px 0;
-    padding: 0 10px;
+    padding: 5px 18px;
+    box-sizing: content-box;
     width: 70%;
+    background-color:var(--inner-layer);
+    border-radius: 8px;
+    box-shadow: var(--inner-shadow); 
 }
 .skills_icon{
     @extend .whatsapp;
@@ -544,12 +653,10 @@ input[type=submit]:hover{
     }
     }
    
- 
-   
     .controller{
         display: flex;
         justify-content: space-between;
-        width: 310px;
+        width: 325px;
     }
     .controller span{
         font-size: 25px;
@@ -563,10 +670,9 @@ input[type=submit]:hover{
         justify-content: center;
         position: relative;
         z-index: 2;
-        top:-365px;
+        top:-332px;
     }
 
-   
     button{
         border:none;
     }
@@ -574,7 +680,7 @@ input[type=submit]:hover{
     .scroll-body{
         overflow-x: scroll;
         overflow-y: hidden;
-        width: 308px;
+        width: 305px;
         display: flex;
         flex-direction: row;
         scroll-snap-type: x mandatory;
@@ -589,22 +695,39 @@ input[type=submit]:hover{
         display: none;
       }
   
-    .block{
+    .block2{
         width: 660px;
         height: 100%;
         scroll-snap-align: start;
         scroll-snap-stop: always;
         margin-right: 10px;
     }
-    .block .img-set img{
-        width: 310px;
+    .block2 .img-set img{
+        width: 280px;
         height: 200px;
         border-radius: 4px;
     }
-    .block span{
+    .block2 span{
         font-size: 15px;
-        font-weight: 400;
+        font-weight: 500;
         color: var(--curtain-bg);
+    }
+    .text-span{
+        box-shadow:var(--inner-shadow);
+        padding: 10px;
+        border-radius: 8px;
+        background-color: var(--inner-layer);
+        box-sizing: content-box;
+        margin: 4px;
+        margin-bottom: 7px;
+    }
+    .img-span{
+        box-shadow:var(--inner-shadow);
+        padding: 8px;
+        border-radius: 8px;
+        background-color:var(--inner-layer); 
+        margin: 4px;
+        margin-bottom: 18px;
     }
     .carousel-set{
         width: 100%;
@@ -612,7 +735,7 @@ input[type=submit]:hover{
         justify-content: center;
         position: relative;
         z-index: 2;
-        top: -490px;
+        top: -555px;
     }
     .carousel-indicator span{
         width: 9px;
@@ -620,6 +743,7 @@ input[type=submit]:hover{
         border-radius: 50%;
         border:1px solid var(--skills-icon);
         display: inline-block;
+        box-shadow: -1px 2px 2px rgb(162, 162, 162);
     }
     .active{
         background-color: var(--skills-icon);
@@ -651,79 +775,49 @@ input[type=submit]:hover{
         font-size: 13px;
         font-weight: 700;
         border-radius: 15px 15px 0 0;
+        box-shadow: var(--inner-outer-shadow-footer);
+    }
+    .footer span{
+        background-color: var(--inner-layer);
+        border-radius: 8px;
+        box-shadow: var(--inner-shadow);
+        box-sizing: content-box;
+        padding:1px 4px;
     }
     .desktopheaderGrid{
         display: none;
     }
-    .center_div{
+    .center_div, .center_div1{
         display: flex;
         justify-content: center;
     }
-    #load_page{
-        //opacity:0.1;
-        transition: opacity .5s;
-    }
-    .animation_bg{
-        width: 70%;
-        height: 4px;
-        background-color: aliceblue;
-        display: flex;
-        align-items: center;
-    }
-    .myloader{
-        width: 15%;
-        height: 2px;
-        background-color:rgb(68, 68, 223) ;
-        animation: myLoader 2s  ease-in-out infinite;
-    }
-    @keyframes myLoader {
-        50%{
-            transform: translateX(565%);
-        } 
-    }
-    .centerAnimation{
-        width: 100%;
-        height: 100vh;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        z-index: 4;
-        background-color:var(--body-bg) ;
-        display: none; //here
-    }
-   .flex{
-    display:flex;
-    justify-content: space-between;
-    width: 260px;
-    align-items: center;
-   }
+
+   
    
 
     //big screen
     @media screen and (min-width:600px) {
-        .block span{
+        .block2 span{
             font-size: 16px;
         }
         .scroll-body{
             width: 410px;
         }
         .controller{
-            width: 410px;
+            width: 420px;
         }
       
-        .block .img-set img{
-            width: 410px;
+        .block2 .img-set img{
+            width: 380px;
             height: 240px;
             border-radius: 4px;
         }
         .controll-set{
-            top:-345px;
+            top:-287px;
         }
         .controller span{
             font-size: 30px;
         }
-
     }
     @media screen and (min-width:767px) and (max-width:1023px){
         
@@ -739,13 +833,14 @@ input[type=submit]:hover{
         }
         .headerGrid{
             width: 0;
+           
         }
          .dlogo{
         grid-area: dlogo;
     }
     .dlogo img{
-        width: 38px;
-        height: 43px;
+        width: 32px;
+        height: 37px;
     }
     .about{
         grid-area: about;
@@ -764,6 +859,7 @@ input[type=submit]:hover{
         grid-area: dswitch;
         display: flex;
         justify-content: flex-end;
+        margin-right: 5px;
     }
     
     .desktopheaderGrid{
@@ -771,6 +867,12 @@ input[type=submit]:hover{
         grid-template-areas: "dlogo about skills projects contact dswitch";
         grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
         width: 90%;
+        background-color:var(--inner-layer);
+        border-radius: 8px;
+        padding: 2px;
+        box-shadow: var(--inner-shadow);
+        height: 40px;
+        box-sizing: content-box;
         align-items: center;
     }
     .desktopheaderGrid a{
@@ -794,30 +896,9 @@ input[type=submit]:hover{
     .blurry{
         filter: blur(0);
     }
-    .intro-img img{
-        width: 100px;
-        height: 110px;
-        animation: logoBlink 1s infinite forwards;
-    }
-    @keyframes logoBlink {
   
-        50%{
-        filter:drop-shadow(3px 3px 10px rgb(79, 79, 174));
-        width: 99px;
-        } 
     }
-    .animate {
-        font-size: 40px;
-    }
-    .contact_layout{
-        width: 240px;
-        position: fixed;
-        bottom: 430px;
-        right: -80px;
-        transform: rotate(90deg);
-    
-    }
-    }
+
     @media screen and (min-width:1024px){
         h2{
             font-size: 17px;
@@ -839,6 +920,7 @@ input[type=submit]:hover{
     .dlogo img{
         width: 38px;
         height: 43px;
+        margin-left: 8px;
     }
     .about{
         grid-area: about;
@@ -857,6 +939,7 @@ input[type=submit]:hover{
         grid-area: dswitch;
         display: flex;
         justify-content: flex-end;
+        margin-right: 8px;
     }
     .skills_icon{
         width: 120px;
@@ -868,6 +951,12 @@ input[type=submit]:hover{
         grid-template-areas: "dlogo about skills projects contact dswitch";
         grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
         width: 90%;
+        background-color:var(--inner-layer);
+        border-radius: 8px;
+        padding: 2px;
+        box-shadow: var(--inner-shadow);
+        height: 40px;
+        box-sizing: content-box;
         align-items: center;
     }
     .desktopheaderGrid a{
@@ -888,7 +977,7 @@ input[type=submit]:hover{
     .blurry{
         filter: blur(0);
     }
-    .block span{
+    .block2 span{
         font-size: 16px;
     }
     .scroll-body{
@@ -899,7 +988,7 @@ input[type=submit]:hover{
        display: none;
     }
   
-    .block .img-set img{
+    .block2 .img-set img{
         width: 100%;
         height: 250px;
         border-radius: 4px;
@@ -907,9 +996,9 @@ input[type=submit]:hover{
     .controll-set, .carousel-set{
      display :none
     }
-    .block{
+    .block2{
     width: 430px;
-    height: 460px;
+    height: 500px;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     margin-right: 10px;
@@ -919,7 +1008,7 @@ input[type=submit]:hover{
     margin-bottom: 10px;
     box-shadow: 2px 2px 5px gray;
     }
-    .block:hover{
+    .block2:hover{
      border:2px solid rgb(100, 100, 239);
     }
     .project_layout{
@@ -930,24 +1019,7 @@ input[type=submit]:hover{
         height: 135px;
         animation: logoBlink 1s infinite forwards;
     }
-    @keyframes logoBlink {
-  
-        50%{
-        filter:drop-shadow(3px 3px 10px rgb(79, 79, 174));
-        width: 124px;
-        } 
-    }
-    .animate {
-        font-size: 48px;
-    }
-    .contact_layout{
-        width: 240px;
-        position: fixed;
-        bottom: 430px;
-        right: -60px;
-        transform: rotate(90deg);
-    
-    }
+   
     .about_fieldset span, .skill_fieldset span, .contact_fieldset label{
         font-size:18px !important;
     }
@@ -956,6 +1028,12 @@ input[type=submit]:hover{
     }
     .desktopheaderGrid a span:hover{
         color:rgb(205, 203, 203);
+    }
+    .git{
+        grid-area: git;
+        text-align: center;
+        line-height: 23px;
+        margin-top: -329px;
     }
     }
     @media screen and (min-width:1300px){

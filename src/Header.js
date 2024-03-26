@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars,faCircleHalfStroke} from '@fortawesome/free-solid-svg-icons'
@@ -7,40 +8,113 @@ import logo from './my-logo.png'
 library.add(faBars,faCircleHalfStroke,faChevronRight)
 const Header=()=>{
 
-const curtainMenu = ()=>{ 
-    document.getElementById('curtain').classList.toggle('curtain_toggle')
-    document.getElementById('container').classList.toggle('blurry')
-  }
-const theme = ()=>{
- const bg_color = getComputedStyle(document.documentElement).getPropertyValue('--body-bg');
+useEffect(()=>{
+const verify = window.localStorage.getItem('checkbox')
+const x = window.localStorage.getItem('checkbox')
  const dom = document.documentElement;
- if(bg_color==='#0d1117'){
-    dom.style.setProperty('--body-bg','#fafafa')
-    dom.style.setProperty('--header-footerbg','linear-gradient(180deg,rgb(100, 100, 239) ,rgb(54, 54, 174))')
-    dom.style.setProperty('--layout','#ffffff')
+if(verify == null){
+    window.localStorage.setItem('checkbox','true')  
+    dom.style.setProperty('--body-bg','#ffffff')
+    dom.style.setProperty('--header-footerbg','linear-gradient(180deg,rgb(247, 245, 243),rgb(252, 251, 251))')
+    dom.style.setProperty('--layout','rgb(252, 251, 251)')
     dom.style.setProperty('--body-text','black')
     dom.style.setProperty('--icon-bg','rgb(3, 3, 46)')
-    dom.style.setProperty('--icon-shadow','rgb(192, 192, 192)')
     dom.style.setProperty('--dauntless-color','rgb(54, 54, 174)')
     dom.style.setProperty('--headericon-shadow','drop-shadow(2px 2px 5px rgb(192, 192, 192))')
     dom.style.setProperty('--curtain-bg','#151b24')
-    dom.style.setProperty('--skills-icon','rgb(54, 54, 174)')
-    document.getElementById('theme-icon').style.transform="rotate(180deg)"
+    dom.style.setProperty('--skills-icon','#151b24')
+    dom.style.setProperty('--header-footercolor','#151b24')
+    dom.style.setProperty('--field-set','silver')
+    dom.style.setProperty('--inner-layer','#fff')
+    dom.style.setProperty('--inner-outer-shadow','1px 2px 4px rgb(199, 197, 197) , 1px 2px 10px rgb(151, 150, 150) inset')
+    dom.style.setProperty('--inner-shadow','1px 2px 5px rgb(162, 162, 162)')
+    dom.style.setProperty('--inner-outer-shadow-footer','1px -2px 4px rgb(199, 197, 197) , 1px -2px 10px rgb(151, 150, 150) inset')
+}
+else{
+
+ if(x === 'true'){
+    dom.style.setProperty('--body-bg','#ffffff')
+    dom.style.setProperty('--header-footerbg','linear-gradient(180deg,rgb(247, 245, 243),rgb(252, 251, 251))')
+    dom.style.setProperty('--layout','rgb(252, 251, 251)')
+    dom.style.setProperty('--body-text','black')
+    dom.style.setProperty('--icon-bg','rgb(3, 3, 46)')
+    dom.style.setProperty('--dauntless-color','rgb(54, 54, 174)')
+    dom.style.setProperty('--headericon-shadow','drop-shadow(2px 2px 5px rgb(192, 192, 192))')
+    dom.style.setProperty('--curtain-bg','#151b24')
+    dom.style.setProperty('--skills-icon','#151b24')
+    dom.style.setProperty('--header-footercolor','#151b24')
+    dom.style.setProperty('--field-set','silver')
+    dom.style.setProperty('--inner-layer','#fff')
+    dom.style.setProperty('--inner-outer-shadow','1px 2px 4px rgb(199, 197, 197) , 1px 2px 10px rgb(151, 150, 150) inset')
+    dom.style.setProperty('--inner-shadow','1px 2px 5px rgb(162, 162, 162)')
+    dom.style.setProperty('--inner-outer-shadow-footer','1px -2px 4px rgb(199, 197, 197) , 1px -2px 10px rgb(151, 150, 150) inset')
  }
  else{ 
     dom.style.setProperty('--body-bg','#0d1117')
-    dom.style.setProperty('--header-footerbg','#151b24')
-    dom.style.setProperty('--layout','#151b24')
+    dom.style.setProperty('--header-footerbg','#0d1117')
+    dom.style.setProperty('--header-footercolor','aliceblue')
+    dom.style.setProperty('--layout','#0d1117')
     dom.style.setProperty('--body-text','hsl(0,0%,100%)')
     dom.style.setProperty('--icon-bg','aliceblue')
-    dom.style.setProperty('--icon-shadow','rgb(68, 68, 223)')
     dom.style.setProperty('--dauntless-color','rgb(68, 68, 223)')
     dom.style.setProperty('--header-footercolor',' aliceblue ')
     dom.style.setProperty('--headericon-shadow','drop-shadow(2px 2px 5px rgb(68, 68, 223))') 
     dom.style.setProperty('--curtain-bg','#f6f8fa')
     dom.style.setProperty('--skills-icon','aliceblue')
-    document.getElementById('theme-icon').style.transform="rotate(360deg)"
+    dom.style.setProperty('--field-set','rgb(76, 76, 245)')
+    dom.style.setProperty('--inner-layer','#12161b')
+    dom.style.setProperty('--inner-outer-shadow','1px 2px 4px rgb(66, 66, 66) , 1px 3px 10px #030202 inset')
+    dom.style.setProperty('--inner-shadow','1px 1px 2px rgb(103, 103, 103)')
+    dom.style.setProperty('--inner-outer-shadow-footer','1px -2px 4px rgb(66, 66, 66) , 1px 3px 10px #030202 inset')
  }
+}
+},[])
+
+const curtainMenu = ()=>{ 
+    document.getElementById('curtain').classList.toggle('curtain_toggle')
+    document.getElementById('container').classList.toggle('blurry')
+  }
+
+const theme = ()=>{
+const x = window.localStorage.getItem('checkbox')
+ const dom = document.documentElement;
+ if(x === 'false'){
+    dom.style.setProperty('--body-bg','#ffffff')
+    dom.style.setProperty('--header-footerbg','linear-gradient(180deg,rgb(247, 245, 243),rgb(252, 251, 251))')
+    dom.style.setProperty('--layout','rgb(252, 251, 251)')
+    dom.style.setProperty('--body-text','black')
+    dom.style.setProperty('--icon-bg','rgb(3, 3, 46)')
+    dom.style.setProperty('--dauntless-color','rgb(54, 54, 174)')
+    dom.style.setProperty('--headericon-shadow','drop-shadow(2px 2px 5px rgb(192, 192, 192))')
+    dom.style.setProperty('--curtain-bg','#151b24')
+    dom.style.setProperty('--skills-icon','#151b24')
+    dom.style.setProperty('--header-footercolor','#151b24')
+    dom.style.setProperty('--field-set','silver')
+    dom.style.setProperty('--inner-layer','#fff')
+    dom.style.setProperty('--inner-outer-shadow','1px 2px 4px rgb(199, 197, 197) , 1px 2px 10px rgb(151, 150, 150) inset')
+    dom.style.setProperty('--inner-shadow','1px 2px 5px rgb(162, 162, 162)')
+    dom.style.setProperty('--inner-outer-shadow-footer','1px -2px 4px rgb(199, 197, 197) , 1px -2px 10px rgb(151, 150, 150) inset')
+ 
+ }
+ else{ 
+    dom.style.setProperty('--body-bg','#0d1117')
+    dom.style.setProperty('--header-footerbg','#0d1117')
+    dom.style.setProperty('--header-footercolor','aliceblue')
+    dom.style.setProperty('--layout','#0d1117')
+    dom.style.setProperty('--body-text','hsl(0,0%,100%)')
+    dom.style.setProperty('--icon-bg','aliceblue')
+    dom.style.setProperty('--dauntless-color','rgb(68, 68, 223)')
+    dom.style.setProperty('--header-footercolor',' aliceblue ')
+    dom.style.setProperty('--headericon-shadow','drop-shadow(2px 2px 5px rgb(68, 68, 223))') 
+    dom.style.setProperty('--curtain-bg','#f6f8fa')
+    dom.style.setProperty('--skills-icon','aliceblue')
+    dom.style.setProperty('--field-set','rgb(76, 76, 245)')
+    dom.style.setProperty('--inner-layer','#12161b')
+    dom.style.setProperty('--inner-outer-shadow','1px 2px 4px rgb(66, 66, 66) , 1px 3px 10px #030202 inset')
+    dom.style.setProperty('--inner-shadow','1px 1px 2px rgb(103, 103, 103)')
+    dom.style.setProperty('--inner-outer-shadow-footer','1px -2px 4px rgb(66, 66, 66) , 1px 3px 10px #030202 inset')
+ }
+ x === 'true' ? window.localStorage.setItem('checkbox','false') : window.localStorage.setItem('checkbox','true')
 }
 const removeClass = ()=>{
     document.getElementById('curtain').classList.remove('curtain_toggle')
@@ -55,7 +129,7 @@ return(<>
     <div className="logo"><img src={logo} alt="mylogo"/></div>
     <div className="brand"></div>
     <div className="switch"><FontAwesomeIcon onClick={theme} className="icon_size" id="theme-icon" icon="fa-solid fa-circle-half-stroke" /></div>
-    <div id='menu_bar'  className="menu"><label for="check">
+    <div id='menu_bar'  className="menu"><label htmlFor="check">
       <input onClick={curtainMenu} type="checkbox" id="check"/> 
       <span></span>
       <span></span>
