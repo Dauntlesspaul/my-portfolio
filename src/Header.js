@@ -14,21 +14,6 @@ const x = window.localStorage.getItem('checkbox')
  const dom = document.documentElement;
 if(verify == null){
     window.localStorage.setItem('checkbox','true')  
-    dom.style.setProperty('--body-bg','#ffffff')
-    dom.style.setProperty('--header-footerbg','linear-gradient(180deg,rgb(247, 245, 243),rgb(252, 251, 251))')
-    dom.style.setProperty('--layout','rgb(252, 251, 251)')
-    dom.style.setProperty('--body-text','black')
-    dom.style.setProperty('--icon-bg','rgb(3, 3, 46)')
-    dom.style.setProperty('--dauntless-color','rgb(54, 54, 174)')
-    dom.style.setProperty('--headericon-shadow','drop-shadow(2px 2px 5px rgb(192, 192, 192))')
-    dom.style.setProperty('--curtain-bg','#151b24')
-    dom.style.setProperty('--skills-icon','#151b24')
-    dom.style.setProperty('--header-footercolor','#151b24')
-    dom.style.setProperty('--field-set','silver')
-    dom.style.setProperty('--inner-layer','#fff')
-    dom.style.setProperty('--inner-outer-shadow','1px 2px 4px rgb(199, 197, 197) , 1px 2px 10px rgb(151, 150, 150) inset')
-    dom.style.setProperty('--inner-shadow','1px 2px 5px rgb(162, 162, 162)')
-    dom.style.setProperty('--inner-outer-shadow-footer','1px -2px 4px rgb(199, 197, 197) , 1px -2px 10px rgb(151, 150, 150) inset')
 }
 else{
 
