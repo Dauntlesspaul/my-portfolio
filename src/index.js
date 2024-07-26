@@ -1,19 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import './styling.scss'
-import { BrowserRouter,Routes,Route} from 'react-router-dom';
-import Home from './Home';
-import Layout from './Layout';
+import './styling.scss';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import About from './pages/About';
+import ShoeHaven from './pages/ShoeHaven';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import GridNews from './pages/GridNews';
+import ScrollToTop from './component/ScrollToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <React.StrictMode>
     <BrowserRouter>
-    <Routes>
-    <Route path="/" element={<Layout/>}>
-    <Route index element={<Home/>}/>
-     </Route>
-    </Routes>
+      <ScrollToTop />
+      <Routes>
+        <Route path='/' index element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about-me" element={<About />} />
+        <Route path="/shoe-haven" element={<ShoeHaven />} />
+        <Route path="/grid-news" element={<GridNews />} />
+      </Routes>
     </BrowserRouter>
+  </React.StrictMode>
 );
+
 reportWebVitals();
