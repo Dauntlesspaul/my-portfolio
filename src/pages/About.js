@@ -143,7 +143,7 @@ const About = () => {
                   <li>participating in hackathons</li>
                  </ul>
                  <h2>Download Resume</h2>
-                 <a href={PDF}  rel="noreferrer" target="_blank">
+                 <a href={PDF} style={{ textDecoration: 'none'}}  rel="noreferrer" target="_blank">
                  <Button
                   variant="outlined"
                   sx={{
