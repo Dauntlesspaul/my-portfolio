@@ -62,7 +62,7 @@ const SideBar = ({ isChecked }) => {
           <h2>Menu</h2>
           <hr />
         </div>
-        <h2><Link to='/' className="no-style">HOME PAGE</Link></h2>
+        <h2><Link to='/' className="no-style">HOMEPAGE</Link></h2>
         <hr className="seg_line2" />
         <h2><Link to='/projects' className="no-style">PROJECTS</Link></h2>
         <hr className="seg_line2" />
