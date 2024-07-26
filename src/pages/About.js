@@ -2,13 +2,14 @@ import React, {useEffect, useState} from "react";
 import { useNavigate, Link } from "react-router-dom";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import {createTheme,IconButton, ThemeProvider } from "@mui/material";
+import {Button, createTheme,IconButton, ThemeProvider } from "@mui/material";
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import XIcon from '@mui/icons-material/X';
 import EmailIcon from '@mui/icons-material/Email';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import { motion } from 'framer-motion';
 import SideBar from "../component/SideBar";
+import PDF from '../assets/files/CV.pdf'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 const theme = createTheme({
     components: {
@@ -141,6 +142,22 @@ const About = () => {
                   <li>Reading</li>
                   <li>participating in hackathons</li>
                  </ul>
+                 <h2>Download Resume</h2>
+                 <a href={PDF}  rel="noreferrer" target="_blank">
+                 <Button
+                  variant="outlined"
+                  sx={{
+                    color: 'rgb(100, 100, 239)',
+                    borderColor: 'rgb(100, 100, 239)',
+                    my: 1.5,
+                    '&:hover': {
+                      borderColor: 'rgb(100, 100, 239)',
+                    }
+                  }}
+                >
+                  Resume
+                </Button>
+                </a>
                  </motion.div>
                  
               </div>
