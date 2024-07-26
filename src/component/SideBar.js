@@ -85,7 +85,7 @@ const SideBar = ({ isChecked }) => {
         <a target="_blank" rel="noopener noreferrer" href="tel:+2348166376786">
         <div className="e-address">
           <CallIcon sx={{ color: 'white', fontSize: '20px', mr: 1 }} />
-          <span>+243 81 6637 6786</span>
+          <span>+234 81 6637 6786</span>
           </div>
         </a>
         <hr className="seg_line2" />
