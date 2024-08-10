@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate, Link } from "react-router-dom";
-import profilePic from '../assets/images/JPEG image.jpeg';
+import profilePic from '../assets/images/profileimage.JPG';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Button, createTheme, ThemeProvider } from "@mui/material";
