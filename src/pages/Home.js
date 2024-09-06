@@ -116,7 +116,7 @@ const Home = () => {
         <hr />
         <div className="md-query">
         <div className="profile_pic_container">
-          <img className="profile_img" src={profilePic} alt="profile pic" loading="lazy" />
+          <img className="profile_img" src={profilePic} alt="profile pic" loading="eager" />
         </div>
         <motion.section
           initial={{ opacity: 0, y: 50 }}
