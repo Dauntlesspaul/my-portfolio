@@ -5,9 +5,13 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { createTheme, IconButton, ThemeProvider } from "@mui/material";
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import CasesOutlinedIcon from '@mui/icons-material/CasesOutlined';
-import GridnewsImg from '../assets/images/gridnews.png';
-import Gr1 from '../assets/images/gr1.png';
-import Gr2 from '../assets/images/gr2.png';
+import Mealsprint from '../assets/images/mealsprint.png';
+import Ms2 from '../assets/images/ms2.png';
+import Ms3 from '../assets/images/ms3.png';
+import Ms4 from '../assets/images/ms4.png';
+import Ms5 from '../assets/images/ms5.png';
+import Ms6 from '../assets/images/ms6.png';
+import Ms7 from '../assets/images/ms7.png';
 
 import XIcon from '@mui/icons-material/X';
 import EmailIcon from '@mui/icons-material/Email';
@@ -35,9 +39,13 @@ const theme = createTheme({
     },
   });
   const images = [
-    GridnewsImg,
-    Gr1,
-    Gr2,
+    Mealsprint,
+    Ms2,
+    Ms3,
+    Ms4,
+    Ms5,
+    Ms6,
+    Ms7,
   ];
   const settings = {
     dots: true,
@@ -48,7 +56,7 @@ const theme = createTheme({
     autoplay: true,
     autoplaySpeed: 3000,
   }
-const GridNews = () => {
+const MealSprint = () => {
     const [isChecked, setChecked] = useState(false);
     const navigate = useNavigate()
     const handleChange = () => {
@@ -148,7 +156,7 @@ const GridNews = () => {
                     <h2>Featured Projects</h2>
                     <hr />
                 </div>
-                <p>More info about Grid news</p>
+                <p>More info about Mealsprint</p>
                 <div className="info-query">
                 <div className="carousel-set">
                 <Slider {...settings}>
@@ -165,31 +173,38 @@ const GridNews = () => {
                 </Slider>
                 </div>
                  <div className="info">
-                 <h2>Grid News</h2>
-                 <p>This news website simplifies staying informed. Users can easily browse various news categories, read the latest articles, and stay updated with breaking news alerts.</p>
+                 <h2>Mealsprint</h2>
+                 <p>TThis is an e-commerce platform offering quick and reliable meal deliveries with a diverse, customizable menu. It integrates easy online ordering, secure payments, and real-time order tracking. The service focuses on speed, quality, and customer satisfaction, ensuring meals arrive fresh and on time.</p>
                  <h2>PROJECT INFO</h2>
                     <hr className="seg_line2" />
                     <div className="project_info">
                       <h3>Year</h3>
-                      <p>2023</p>
+                      <p>2024</p>
                     </div>
                     <hr className="seg_line2" />
                     <div className="project_info">
                       <h3>Type</h3>
-                      <p>news website</p>
+                      <p>e-commerce</p>
                     </div>
                     <hr className="seg_line2" />
                     <h2>TOOLS USED</h2>
                     <hr className="seg_line2" />
-                    <h3> 👉Sass</h3>
-                    <h3> 👉Ejs</h3>
+                    <h3> 👉Tailwind CSS</h3>
+                    <h3> 👉Redux Toolkit</h3>
+                    <h3> 👉React</h3>
+                    <h3> 👉Stripe payment intent</h3>
+                    <h3> 👉AWS S3 bucket</h3>
+                    <h3> 👉Node.js</h3>
+                    <h3> 👉Express.js</h3>
                     <h3> 👉Mongo Database</h3>
                     <hr className="seg_line2" />
                     <h2>FEATURES</h2>
                     <hr className="seg_line2" />
                     <h3>📌 User Sign up/Sign in</h3>
                     <h3>📌 User can cart and place oder</h3>
-                    <h3>📌 User can make payment using</h3>
+                    <h3>📌 User can make payment using card </h3>
+                    <h3>📌 User can track order and order history</h3>
+                    <h3>📌 Email notiication on successful order</h3>
                     <h3>📌 User can subscribe to new letter to get latest offers</h3>
                     <h3>📌 User can change or recover password through registered email</h3>
                     </div>
@@ -203,4 +218,4 @@ const GridNews = () => {
     )
 }
 
-export default GridNews
+export default MealSprint

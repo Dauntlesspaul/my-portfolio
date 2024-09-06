@@ -11,6 +11,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import GridNews from './pages/GridNews';
 import ScrollToTop from './component/ScrollToTop';
+import MealSprint from './pages/Mealsprint';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +24,8 @@ root.render(
         <Route path="/about-me" element={<About />} />
         <Route path="/shoe-haven" element={<ShoeHaven />} />
         <Route path="/grid-news" element={<GridNews />} />
+        <Route path="/mealsprint" element={<MealSprint />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

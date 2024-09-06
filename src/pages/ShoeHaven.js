@@ -192,6 +192,9 @@ const ShoeHaven = () => {
                     <h3> 👉Tailwind Css</h3>
                     <h3> 👉React</h3>
                     <h3> 👉Mongo Database</h3>
+                    <h3> 👉Stripe checkout</h3>
+                    <h3> 👉Node.js</h3>
+                    <h3> 👉Express.js</h3>
                     <h3> 👉AWS S3 Bucket</h3>
                     <hr className="seg_line2" />
                     <h2>FEATURES</h2>
@@ -200,7 +203,7 @@ const ShoeHaven = () => {
                     <h3>📌 User can rate and review products</h3>
                     <h3>📌 User can cart and place oder</h3>
                     <h3>📌 User can make payment using card or cash on delivery</h3>
-                    <h3>📌 User can subscribe to new outlet to get latest offers</h3>
+                    <h3>📌 User can subscribe to new letter to get latest offers</h3>
                     <h3>📌 User can change or recover password through registered email</h3>
                     </div>
                     </div>
