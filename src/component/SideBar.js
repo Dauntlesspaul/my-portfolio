@@ -1,5 +1,5 @@
 import React, { useEffect, useRef} from "react";
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import '../styling.scss';
 import EmailIcon from '@mui/icons-material/Email';
 import CallIcon from '@mui/icons-material/Call';
@@ -13,6 +13,9 @@ import PDF from '../assets/files/CV.pdf'
 
 const SideBar = ({ isChecked }) => {
   const sidebarRef = useRef();
+  const location = useLocation()
+
+  const currentPath = location.pathname;
 
   useEffect(() => {
     const checkWindowWidth = () => {
@@ -62,9 +65,9 @@ const SideBar = ({ isChecked }) => {
           <h2>Menu</h2>
           <hr />
         </div>
-        <h2><Link to='/' className="no-style">HOMEPAGE</Link></h2>
+        <h2><Link to='/' style={{color: currentPath === '/' ? 'gray' : ''}} className="no-style">HOMEPAGE</Link></h2>
         <hr className="seg_line2" />
-        <h2><Link to='/projects' className="no-style">PROJECTS</Link></h2>
+        <h2><Link to='/projects'  style={{color: currentPath === '/projects' ? 'gray' : ''}} className="no-style">PROJECTS</Link></h2>
         <hr className="seg_line2" />
         <a href={PDF}  rel="noreferrer" target="_blank">
         <h2>DOWNLOAD RESUME</h2>

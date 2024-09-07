@@ -174,7 +174,7 @@ const MealSprint = () => {
                 </div>
                  <div className="info">
                  <h2>Mealsprint</h2>
-                 <p>TThis is an e-commerce platform offering quick and reliable meal deliveries with a diverse, customizable menu. It integrates easy online ordering, secure payments, and real-time order tracking. The service focuses on speed, quality, and customer satisfaction, ensuring meals arrive fresh and on time.</p>
+                 <p>This is an e-commerce platform offering quick and reliable meal deliveries with a diverse, customizable menu. It integrates easy online ordering, secure payments, and real-time order tracking. The service focuses on speed, quality, and customer satisfaction, ensuring meals arrive fresh and on time.</p>
                  <h2>PROJECT INFO</h2>
                     <hr className="seg_line2" />
                     <div className="project_info">
