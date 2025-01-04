@@ -18,9 +18,11 @@
     "@testing-library/user-event": "^14.5.2",
     "framer-motion": "^11.3.17",
     "fullpage.js": "^4.0.26",
+    "nth-check": "^2.1.1",
+    "postcss": "^8.4.49",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-slick": "^0.30.2",
     "sass": "^1.77.8",
     "slick-carousel": "^1.8.1",
@@ -53,5 +55,8 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "react-router-dom": "^6.25.1"
+  },
+  "overrides": {
+    "http-proxy-middleware": "2.0.7"
   }
 }
