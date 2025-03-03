@@ -12,6 +12,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import GridNews from './pages/GridNews';
 import ScrollToTop from './component/ScrollToTop';
 import MealSprint from './pages/Mealsprint';
+import Moposh from './pages/Moposh';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +23,7 @@ root.render(
         <Route path='/' index element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about-me" element={<About />} />
+        <Route path='/moposh' element={<Moposh/>}/>
         <Route path="/shoe-haven" element={<ShoeHaven />} />
         <Route path="/grid-news" element={<GridNews />} />
         <Route path="/mealsprint" element={<MealSprint />} />

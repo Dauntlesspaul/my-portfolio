@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useNavigate, Link } from "react-router-dom";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { IconButton, createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, IconButton, ThemeProvider } from "@mui/material";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import CasesOutlinedIcon from "@mui/icons-material/CasesOutlined";
+import Moposhluxury from "../assets/images/moposh.png";
+import Mp2 from "../assets/images/moposh2.png";
+import Mp3 from "../assets/images/moposh3.png";
+
 import XIcon from "@mui/icons-material/X";
 import EmailIcon from "@mui/icons-material/Email";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import SideBar from "../component/SideBar";
-import Mealsprint from "../component/Mealsprint";
-import Shoehaven from "../component/Shoehaven";
-import Gridnews from "../component/Gridnews";
-import Moposh from "../component/Moposh";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import "../slick-custom.css";
 const theme = createTheme({
   components: {
     MuiSvgIcon: {
@@ -32,7 +36,17 @@ const theme = createTheme({
     },
   },
 });
-const Projects = () => {
+const images = [Moposhluxury, Mp2, Mp3];
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+};
+const Moposh = () => {
   const [isChecked, setChecked] = useState(false);
   const navigate = useNavigate();
   const handleChange = () => {
@@ -149,17 +163,59 @@ const Projects = () => {
                   sx={{ color: "rgb(99, 99, 99)", fontSize: "15px" }}
                 />
               </div>
-              <div className="content">
+              <div className="info-content">
                 <div className="project_header">
                   <h2>Featured Projects</h2>
                   <hr />
                 </div>
-                <p>Here are a few of my selected projects for you to explore</p>
-                <div className="project-md-query">
-                  <Moposh/>
-                  <Mealsprint />
-                  <Shoehaven />
-                  <Gridnews />
+                <p>More info about Mealsprint</p>
+                <div className="info-query">
+                  <div className="carousel-set">
+                    <Slider {...settings}>
+                      {images.map((image, index) => (
+                        <div key={index}>
+                          <img
+                            src={image}
+                            alt={`Slide ${index + 1}`}
+                            style={{ width: "100%", height: "auto" }}
+                            loading="lazy"
+                          />
+                        </div>
+                      ))}
+                    </Slider>
+                  </div>
+                  <div className="info">
+                    <h2>Moposhluxury</h2>
+                    <p>
+                      MoposhLuxury is a business website showcasing a curated
+                      selection of luxury fashion items and accessories. It
+                      provides an elegant platform for potential customers to
+                      explore high-end products and make inquiries.
+                    </p>
+                    <h2>PROJECT INFO</h2>
+                    <hr className="seg_line2" />
+                    <div className="project_info">
+                      <h3>Year</h3>
+                      <p>2025</p>
+                    </div>
+                    <hr className="seg_line2" />
+                    <div className="project_info">
+                      <h3>Type</h3>
+                      <p>Business Website</p>
+                    </div>
+                    <hr className="seg_line2" />
+                    <h2>TOOLS USED</h2>
+                    <hr className="seg_line2" />
+                    <h3> 👉Tailwind CSS</h3>
+                    <h3> 👉Next.js</h3>
+                    <h3> 👉Material UI</h3>
+                    <h3> 👉Node.js</h3>
+                    <h3> 👉Nodemailer</h3>
+                    <hr className="seg_line2" />
+                    <h2>FEATURES</h2>
+                    <hr className="seg_line2" />
+                    <h3>📌 Business informations</h3>
+                  </div>
                 </div>
               </div>
             </div>
@@ -170,4 +226,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Moposh;

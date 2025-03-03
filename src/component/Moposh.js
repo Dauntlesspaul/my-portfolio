@@ -1,14 +1,13 @@
 import React from "react";
-import ShoehavenImg from "../assets/images/shoehaven.png";
+import Moposhluxury from "../assets/images/moposh.png";
 import InfoIcon from "@mui/icons-material/Info";
 import LinkIcon from "@mui/icons-material/Link";
 import { motion } from "framer-motion";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-function Shoehaven() {
+function Moposh() {
   const navigate = useNavigate();
-
   return (
     <motion.div
       initial={{ opacity: 0, x: 50 }}
@@ -21,29 +20,31 @@ function Shoehaven() {
         <div className="set-container">
           <div className="project_img_container">
             <motion.img
-              src={ShoehavenImg}
+              src={Moposhluxury}
               alt="shoe haven"
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
             />
           </div>
-          <h2>Shoe Haven</h2>
+          <h2>Moposhluxury</h2>
           <p>
-            This e-commerce shoe shopping site simplifies finding and buying the
-            perfect pair of shoes. Customers can easily browse various styles
-            and brands, add items to their cart, and make secure purchases.
+            {" "}
+            MoposhLuxury is a business website showcasing a curated selection of
+            luxury fashion items and accessories. It provides an elegant
+            platform for potential customers to explore high-end products and
+            make inquiries.
           </p>
         </div>
         <h2>PROJECT INFO</h2>
         <hr className="seg_line2" />
         <div className="project_info">
           <h3>Year</h3>
-          <p>2024</p>
+          <p>2025</p>
         </div>
         <hr className="seg_line2" />
         <div className="project_info">
           <h3>Type</h3>
-          <p>e-commerce</p>
+          <p>Business Website</p>
         </div>
         <hr className="seg_line2" />
         <div className="project_info">
@@ -52,7 +53,7 @@ function Shoehaven() {
               variant="outlined"
               onClick={() =>
                 window.open(
-                  "https://shoe-haven.vercel.app/",
+                  "https://www.moposhluxury.com/",
                   "_blank",
                   "noopener,noreferrer"
                 )
@@ -72,7 +73,7 @@ function Shoehaven() {
           <span>
             <Button
               variant="outlined"
-              onClick={() => navigate("/shoe-haven")}
+              onClick={() => navigate("/moposh")}
               sx={{
                 color: "rgb(100, 100, 239)",
                 borderColor: "rgb(100, 100, 239)",
@@ -91,4 +92,4 @@ function Shoehaven() {
   );
 }
 
-export default Shoehaven;
+export default Moposh;

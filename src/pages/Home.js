@@ -7,6 +7,7 @@ import { Button, createTheme, ThemeProvider } from "@mui/material";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
 import CasesOutlinedIcon from "@mui/icons-material/CasesOutlined";
+import Moposh from "../assets/images/moposh.png";
 import ShoehavenImg from "../assets/images/shoehaven.png";
 import GridnewsImg from "../assets/images/gridnews.png";
 import Mealsprint from "../assets/images/mealsprint.png";
@@ -173,10 +174,10 @@ const Home = () => {
                   <strong>Full-Stack Software Developer</strong>, I specialize
                   in designing and building seamless, user-friendly web
                   applications. With expertise in the{" "}
-                  <strong>MERN stack</strong> (MongoDB, Express.js, React,
-                  Node.js), I bring ideas to life by crafting responsive,
-                  dynamic, and functional digital solutions that prioritize
-                  exceptional user experiences.
+                  <strong>MERN stack</strong> (MongoDB, Express.js, React.js,
+                  Next.js Node.js), I bring ideas to life by crafting
+                  responsive, dynamic, and functional digital solutions that
+                  prioritize exceptional user experiences.
                 </p>
                 <Button
                   variant="outlined"
@@ -324,242 +325,328 @@ const Home = () => {
                 <p>Here are a few of my selected projects for you to explore</p>
                 <div className="project-md-query">
                   <motion.div
-                    id="project"
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                     style={{ willChange: "opacity, transform" }}
-                    className="projects"
+                    className="glass-container"
                   >
-                    <div className="set-container">
-                      <div className="project_img_container">
-                        <motion.img
-                          src={Mealsprint}
-                          alt="shoe haven"
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.3 }}
-                        />
+                    <div id="project" className="projects">
+                      <div className="set-container">
+                        <div className="project_img_container">
+                          <motion.img
+                            src={Moposh}
+                            alt="shoe haven"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </div>
+                        <h2>Moposhluxury</h2>
+                        <p>
+                          MoposhLuxury is a business website showcasing a
+                          curated selection of luxury fashion items and
+                          accessories. It provides an elegant platform for
+                          potential customers to explore high-end products and
+                          make inquiries.
+                        </p>
                       </div>
-                      <h2>Mealsprint</h2>
-                      <p>
-                        This is an e-commerce platform offering quick and
-                        reliable meal deliveries with a diverse, customizable
-                        menu. It integrates easy online ordering, secure
-                        payments, and real-time order tracking.
-                      </p>
-                    </div>
-                    <h2>PROJECT INFO</h2>
-                    <hr className="seg_line2" />
-                    <div className="project_info">
-                      <h3>Year</h3>
-                      <p>2024</p>
-                    </div>
-                    <hr className="seg_line2" />
-                    <div className="project_info">
-                      <h3>Type</h3>
-                      <p>e-commerce</p>
-                    </div>
-                    <hr className="seg_line2" />
-                    <div className="project_info">
-                      <span>
-                        <Button
-                          variant="outlined"
-                          onClick={() =>
-                            window.open(
-                              "https://mealsprint.vercel.app/",
-                              "_blank",
-                              "noopener,noreferrer"
-                            )
-                          }
-                          sx={{
-                            color: "rgb(100, 100, 239)",
-                            borderColor: "rgb(100, 100, 239)",
-                            my: 1.5,
-                            "&:hover": {
+                      <h2>PROJECT INFO</h2>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <h3>Year</h3>
+                        <p>2025</p>
+                      </div>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <h3>Type</h3>
+                        <p>Business Website</p>
+                      </div>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <span>
+                          <Button
+                            variant="outlined"
+                            onClick={() =>
+                              window.open(
+                                "https://www.moposhluxury.com/",
+                                "_blank",
+                                "noopener,noreferrer"
+                              )
+                            }
+                            sx={{
+                              color: "rgb(100, 100, 239)",
                               borderColor: "rgb(100, 100, 239)",
-                            },
-                          }}
-                        >
-                          LIVE DEMO{" "}
-                          <LinkIcon sx={{ fontSize: "16px", ml: 0.8 }} />
-                        </Button>
-                      </span>
-                      <span>
-                        <Button
-                          variant="outlined"
-                          onClick={() => navigate("/mealsprint")}
-                          sx={{
-                            color: "rgb(100, 100, 239)",
-                            borderColor: "rgb(100, 100, 239)",
-                            my: 1.5,
-                            "&:hover": {
+                              my: 1.5,
+                              "&:hover": {
+                                borderColor: "rgb(100, 100, 239)",
+                              },
+                            }}
+                          >
+                            LIVE DEMO{" "}
+                            <LinkIcon sx={{ fontSize: "16px", ml: 0.8 }} />
+                          </Button>
+                        </span>
+                        <span>
+                          <Button
+                            variant="outlined"
+                            onClick={() => navigate("/moposh")}
+                            sx={{
+                              color: "rgb(100, 100, 239)",
                               borderColor: "rgb(100, 100, 239)",
-                            },
-                          }}
-                        >
-                          MORE INFO{" "}
-                          <InfoIcon sx={{ fontSize: "16px", ml: 0.8 }} />
-                        </Button>
-                      </span>
+                              my: 1.5,
+                              "&:hover": {
+                                borderColor: "rgb(100, 100, 239)",
+                              },
+                            }}
+                          >
+                            MORE INFO{" "}
+                            <InfoIcon sx={{ fontSize: "16px", ml: 0.8 }} />
+                          </Button>
+                        </span>
+                      </div>
                     </div>
                   </motion.div>
                   <motion.div
-                    id="project"
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                     style={{ willChange: "opacity, transform" }}
-                    className="projects"
+                    className="glass-container"
                   >
-                    <div className="set-container">
-                      <div className="project_img_container">
-                        <motion.img
-                          src={ShoehavenImg}
-                          alt="shoe haven"
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.3 }}
-                        />
+                    <div id="project" className="projects">
+                      <div className="set-container">
+                        <div className="project_img_container">
+                          <motion.img
+                            src={Mealsprint}
+                            alt="shoe haven"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </div>
+                        <h2>Mealsprint</h2>
+                        <p>
+                          This is an e-commerce platform offering quick and
+                          reliable meal deliveries with a diverse, customizable
+                          menu. It integrates easy online ordering, secure
+                          payments, and real-time order tracking.
+                        </p>
                       </div>
-                      <h2>Shoe Haven</h2>
-                      <p>
-                        This e-commerce shoe shopping site simplifies finding
-                        and buying the perfect pair of shoes. Customers can
-                        easily browse various styles and brands, add items to
-                        their cart, and make secure purchases.
-                      </p>
-                    </div>
-                    <h2>PROJECT INFO</h2>
-                    <hr className="seg_line2" />
-                    <div className="project_info">
-                      <h3>Year</h3>
-                      <p>2024</p>
-                    </div>
-                    <hr className="seg_line2" />
-                    <div className="project_info">
-                      <h3>Type</h3>
-                      <p>e-commerce</p>
-                    </div>
-                    <hr className="seg_line2" />
-                    <div className="project_info">
-                      <span>
-                        <Button
-                          variant="outlined"
-                          onClick={() =>
-                            window.open(
-                              "https://shoe-haven.vercel.app/",
-                              "_blank",
-                              "noopener,noreferrer"
-                            )
-                          }
-                          sx={{
-                            color: "rgb(100, 100, 239)",
-                            borderColor: "rgb(100, 100, 239)",
-                            my: 1.5,
-                            "&:hover": {
+                      <h2>PROJECT INFO</h2>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <h3>Year</h3>
+                        <p>2024</p>
+                      </div>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <h3>Type</h3>
+                        <p>e-commerce</p>
+                      </div>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <span>
+                          <Button
+                            variant="outlined"
+                            onClick={() =>
+                              window.open(
+                                "https://mealsprint.vercel.app/",
+                                "_blank",
+                                "noopener,noreferrer"
+                              )
+                            }
+                            sx={{
+                              color: "rgb(100, 100, 239)",
                               borderColor: "rgb(100, 100, 239)",
-                            },
-                          }}
-                        >
-                          LIVE DEMO{" "}
-                          <LinkIcon sx={{ fontSize: "16px", ml: 0.8 }} />
-                        </Button>
-                      </span>
-                      <span>
-                        <Button
-                          variant="outlined"
-                          onClick={() => navigate("/shoe-haven")}
-                          sx={{
-                            color: "rgb(100, 100, 239)",
-                            borderColor: "rgb(100, 100, 239)",
-                            my: 1.5,
-                            "&:hover": {
+                              my: 1.5,
+                              "&:hover": {
+                                borderColor: "rgb(100, 100, 239)",
+                              },
+                            }}
+                          >
+                            LIVE DEMO{" "}
+                            <LinkIcon sx={{ fontSize: "16px", ml: 0.8 }} />
+                          </Button>
+                        </span>
+                        <span>
+                          <Button
+                            variant="outlined"
+                            onClick={() => navigate("/mealsprint")}
+                            sx={{
+                              color: "rgb(100, 100, 239)",
                               borderColor: "rgb(100, 100, 239)",
-                            },
-                          }}
-                        >
-                          MORE INFO{" "}
-                          <InfoIcon sx={{ fontSize: "16px", ml: 0.8 }} />
-                        </Button>
-                      </span>
+                              my: 1.5,
+                              "&:hover": {
+                                borderColor: "rgb(100, 100, 239)",
+                              },
+                            }}
+                          >
+                            MORE INFO{" "}
+                            <InfoIcon sx={{ fontSize: "16px", ml: 0.8 }} />
+                          </Button>
+                        </span>
+                      </div>
                     </div>
                   </motion.div>
                   <motion.div
-                    id="project2"
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                     style={{ willChange: "opacity, transform" }}
-                    className="projects"
+                    className="glass-container"
                   >
-                    <div className="set-container">
-                      <div className="project_img_container">
-                        <motion.img
-                          src={GridnewsImg}
-                          alt="shoe haven"
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.3 }}
-                        />
+                    <div id="project" className="projects">
+                      <div className="set-container">
+                        <div className="project_img_container">
+                          <motion.img
+                            src={ShoehavenImg}
+                            alt="shoe haven"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </div>
+                        <h2>Shoe Haven</h2>
+                        <p>
+                          This e-commerce shoe shopping site simplifies finding
+                          and buying the perfect pair of shoes. Customers can
+                          easily browse various styles and brands, add items to
+                          their cart, and make secure purchases.
+                        </p>
                       </div>
-                      <h2>Grid News</h2>
-                      <p>
-                        This news website simplifies staying informed. Users can
-                        easily browse various news categories, read the latest
-                        articles, and stay updated with breaking news alerts.
-                      </p>
-                    </div>
-                    <h2>PROJECT INFO</h2>
-                    <hr className="seg_line2" />
-                    <div className="project_info">
-                      <h3>Year</h3>
-                      <p>2023</p>
-                    </div>
-                    <hr className="seg_line2" />
-                    <div className="project_info">
-                      <h3>Type</h3>
-                      <p>news website</p>
-                    </div>
-                    <hr className="seg_line2" />
-                    <div className="project_info">
-                      <span>
-                        <Button
-                          variant="outlined"
-                          onClick={() =>
-                            window.open(
-                              "https://gridnews.onrender.com/",
-                              "_blank",
-                              "noopener,noreferrer"
-                            )
-                          }
-                          sx={{
-                            color: "rgb(100, 100, 239)",
-                            borderColor: "rgb(100, 100, 239)",
-                            my: 1.5,
-                            "&:hover": {
+                      <h2>PROJECT INFO</h2>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <h3>Year</h3>
+                        <p>2024</p>
+                      </div>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <h3>Type</h3>
+                        <p>e-commerce</p>
+                      </div>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <span>
+                          <Button
+                            variant="outlined"
+                            onClick={() =>
+                              window.open(
+                                "https://shoe-haven.vercel.app/",
+                                "_blank",
+                                "noopener,noreferrer"
+                              )
+                            }
+                            sx={{
+                              color: "rgb(100, 100, 239)",
                               borderColor: "rgb(100, 100, 239)",
-                            },
-                          }}
-                        >
-                          LIVE DEMO{" "}
-                          <LinkIcon sx={{ fontSize: "16px", ml: 0.8 }} />
-                        </Button>
-                      </span>
-                      <span>
-                        <Button
-                          variant="outlined"
-                          onClick={() => navigate("/grid-news")}
-                          sx={{
-                            color: "rgb(100, 100, 239)",
-                            borderColor: "rgb(100, 100, 239)",
-                            my: 1.5,
-                            "&:hover": {
+                              my: 1.5,
+                              "&:hover": {
+                                borderColor: "rgb(100, 100, 239)",
+                              },
+                            }}
+                          >
+                            LIVE DEMO{" "}
+                            <LinkIcon sx={{ fontSize: "16px", ml: 0.8 }} />
+                          </Button>
+                        </span>
+                        <span>
+                          <Button
+                            variant="outlined"
+                            onClick={() => navigate("/shoe-haven")}
+                            sx={{
+                              color: "rgb(100, 100, 239)",
                               borderColor: "rgb(100, 100, 239)",
-                            },
-                          }}
-                        >
-                          MORE INFO{" "}
-                          <InfoIcon sx={{ fontSize: "16px", ml: 0.8 }} />
-                        </Button>
-                      </span>
+                              my: 1.5,
+                              "&:hover": {
+                                borderColor: "rgb(100, 100, 239)",
+                              },
+                            }}
+                          >
+                            MORE INFO{" "}
+                            <InfoIcon sx={{ fontSize: "16px", ml: 0.8 }} />
+                          </Button>
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    style={{ willChange: "opacity, transform" }}
+                    className="glass-container"
+                  >
+                    <div id="project" className="projects">
+                      <div className="set-container">
+                        <div className="project_img_container">
+                          <motion.img
+                            src={GridnewsImg}
+                            alt="shoe haven"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </div>
+                        <h2>Grid News</h2>
+                        <p>
+                          This news website simplifies staying informed. Users
+                          can easily browse various news categories, read the
+                          latest articles, and stay updated with breaking news
+                          alerts.
+                        </p>
+                      </div>
+                      <h2>PROJECT INFO</h2>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <h3>Year</h3>
+                        <p>2023</p>
+                      </div>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <h3>Type</h3>
+                        <p>news website</p>
+                      </div>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <span>
+                          <Button
+                            variant="outlined"
+                            onClick={() =>
+                              window.open(
+                                "https://gridnews.onrender.com/",
+                                "_blank",
+                                "noopener,noreferrer"
+                              )
+                            }
+                            sx={{
+                              color: "rgb(100, 100, 239)",
+                              borderColor: "rgb(100, 100, 239)",
+                              my: 1.5,
+                              "&:hover": {
+                                borderColor: "rgb(100, 100, 239)",
+                              },
+                            }}
+                          >
+                            LIVE DEMO{" "}
+                            <LinkIcon sx={{ fontSize: "16px", ml: 0.8 }} />
+                          </Button>
+                        </span>
+                        <span>
+                          <Button
+                            variant="outlined"
+                            onClick={() => navigate("/grid-news")}
+                            sx={{
+                              color: "rgb(100, 100, 239)",
+                              borderColor: "rgb(100, 100, 239)",
+                              my: 1.5,
+                              "&:hover": {
+                                borderColor: "rgb(100, 100, 239)",
+                              },
+                            }}
+                          >
+                            MORE INFO{" "}
+                            <InfoIcon sx={{ fontSize: "16px", ml: 0.8 }} />
+                          </Button>
+                        </span>
+                      </div>
                     </div>
                   </motion.div>
                 </div>
