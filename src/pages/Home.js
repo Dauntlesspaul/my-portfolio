@@ -160,25 +160,33 @@ const Home = () => {
                   loading="eager"
                 />
               </div>
-              <motion.section
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                style={{ willChange: "opacity, transform" }}
-              >
-                <h1>Hi, I'm Paul Oladipupo</h1>
-                <h2>A Full-Stack Software Developer</h2>
-                <p>
+              <section>
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  style={{ willChange: "opacity, transform" }}
+                >
+                  <h1>Hi, I'm Paul Oladipupo</h1>
+                  <h2>A Full-Stack Software Developer</h2>
+                </motion.div>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  style={{ willChange: "opacity, transform" }}
+                >
                   I'm Paul Oladipupo, also known as{" "}
                   <strong>Dauntless Dev</strong>. As a passionate and innovative{" "}
                   <strong>Full-Stack Software Developer</strong>, I specialize
                   in designing and building seamless, user-friendly web
                   applications. With expertise in the{" "}
                   <strong>MERN stack</strong> (MongoDB, Express.js, React.js,
-                  Next.js Node.js), I bring ideas to life by crafting
+                  Next.js, Node.js), I bring ideas to life by crafting
                   responsive, dynamic, and functional digital solutions that
                   prioritize exceptional user experiences.
-                </p>
+                </motion.p>
                 <Button
                   variant="outlined"
                   sx={{
@@ -197,7 +205,7 @@ const Home = () => {
                 >
                   About me
                 </Button>
-              </motion.section>
+              </section>
             </div>
             <hr className="seg_line" />
             <div className="skills_container">
