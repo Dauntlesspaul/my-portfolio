@@ -1,14 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styling.scss";
 import EmailIcon from "@mui/icons-material/Email";
-import CallIcon from "@mui/icons-material/Call";
 import HouseIcon from "@mui/icons-material/House";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-import { Copyright, WhatsApp } from "@mui/icons-material";
+import { Copyright } from "@mui/icons-material";
 import PDF from "../assets/files/Paul Oladipupo — Software Dev.pdf";
 
 const SideBar = ({ isChecked }) => {
@@ -99,10 +98,6 @@ const SideBar = ({ isChecked }) => {
           <h2>Contact me</h2>
           <hr />
         </div>
-        <p>
-          I am open to frontend and backend web development roles, and
-          collaborative projects
-        </p>
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -114,27 +109,12 @@ const SideBar = ({ isChecked }) => {
           </div>
         </a>
         <hr className="seg_line2" />
-        <a target="_blank" rel="noopener noreferrer" href="tel:+2348166376786">
-          <div className="e-address">
-            <CallIcon sx={{ color: "white", fontSize: "20px", mr: 1 }} />
-            <span>+234 81 6637 6786</span>
-          </div>
-        </a>
-        <hr className="seg_line2" />
-        <Link
-          target="_blank"
-          rel="noopener noreferrer"
-          to="https://wa.link/6e51su"
-        >
-          <div className="e-address">
-            <WhatsApp sx={{ color: "white", fontSize: "20px", mr: 1 }} />
-            <span>Chat me up</span>
-          </div>
-        </Link>
+
+     
         <hr className="seg_line2" />
         <div className="e-address">
           <HouseIcon sx={{ color: "white", fontSize: "20px", mr: 1 }} />
-          <span>Ikeja, Lagos, Nigeria</span>
+          <span>Lagos, Nigeria</span>
         </div>
         <hr className="seg_final" />
         <div className="e-address">
