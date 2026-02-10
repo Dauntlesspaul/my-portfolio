@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import profilePic from "../assets/images/profileimage.JPG";
+import profilePic from "../assets/images/profileImage.jpeg";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Button, createTheme, ThemeProvider } from "@mui/material";
@@ -16,18 +16,21 @@ import LinkIcon from "@mui/icons-material/Link";
 import XIcon from "@mui/icons-material/X";
 import EmailIcon from "@mui/icons-material/Email";
 import {
-  Css,
   Express,
   Git,
   Html,
-  Js,
   Mongodb,
   Nodejs,
   ReactSvg,
   Next,
   Ts,
-  Sass,
   Tailwind,
+  RestAPI,
+  CICD,
+  S3,
+  PostgreSQL,
+  Redux,
+  Websocket,
 } from "../component/Svg";
 import { motion } from "framer-motion";
 import SideBar from "../component/SideBar";
@@ -145,7 +148,7 @@ const Home = () => {
                 <div className="role">
                   <div className="block"></div>
                   <p>
-                    Full-Stack <br /> Software Developer (MERN)
+                    Full-Stack <br /> Software Engineer
                   </p>
                 </div>
               </div>
@@ -168,7 +171,7 @@ const Home = () => {
                   style={{ willChange: "opacity, transform" }}
                 >
                   <h1>Hi, I'm Paul Oladipupo</h1>
-                  <h2>A Full-Stack Software Developer</h2>
+                  <h2>A Full-Stack Software Engineer</h2>
                 </motion.div>
 
                 <motion.p
@@ -177,15 +180,11 @@ const Home = () => {
                   transition={{ duration: 0.8, delay: 0.5 }}
                   style={{ willChange: "opacity, transform" }}
                 >
-                  I'm Paul Oladipupo, also known as{" "}
-                  <strong>Dauntless Dev</strong>. As a passionate and innovative{" "}
-                  <strong>Full-Stack Software Developer</strong>, I specialize
-                  in designing and building seamless, user-friendly web
-                  applications. With expertise in the{" "}
-                  <strong>MERN stack</strong> (MongoDB, Express.js, React.js,
-                  Next.js, Node.js), I bring ideas to life by crafting
-                  responsive, dynamic, and functional digital solutions that
-                  prioritize exceptional user experiences.
+                  I design and build production-ready web applications with a
+                  focus on clean architecture, performance, and maintainability.
+                  I work across the stack using React, Next.js, Node.js, and
+                  PostgreSQL-based systems such as Supabase to deliver scalable
+                  and reliable digital products.
                 </motion.p>
                 <Button
                   variant="outlined"
@@ -224,94 +223,80 @@ const Home = () => {
                 <div className="tools_container">
                   {[
                     {
-                      Icon: Html,
-                      title: "HTML5",
-                      description:
-                        "Good knowledge of semantic HTML, responsive design, and accessibility, ensuring user-friendly and SEO-optimized web pages.",
+                      group: "Frontend Engineering",
+                      summary:
+                        "Building accessible, performant user interfaces and frontend architecture.",
+                      tools: [
+                        { Icon: ReactSvg, title: "React" },
+                        { Icon: Next, title: "Next.js" },
+                        { Icon: Ts, title: "TypeScript" },
+                        { Icon: Tailwind, title: "Tailwind CSS" },
+                        { Icon: Redux, title: "Redux" },
+                        { Icon: Html, title: "HTML / CSS" },
+                      ],
                     },
                     {
-                      Icon: Css,
-                      title: "CSS",
-                      description:
-                        "Vast knowledge in creating visually appealing and responsive designs with a focus on maintainability and cross-browser compatibility.",
+                      group: "Backend & APIs",
+                      summary:
+                        "Designing scalable backend services, APIs, and system integrations.",
+                      tools: [
+                        { Icon: Nodejs, title: "Node.js" },
+                        { Icon: Express, title: "Express.js" },
+                        { Icon: RestAPI, title: "REST APIs" },
+                        { Icon: Websocket, title: "Websocket" },
+                      ],
                     },
                     {
-                      Icon: Tailwind,
-                      title: "Tailwind CSS",
-                      description:
-                        "Proficient in creating modern and responsive designs using Tailwind CSS, focusing on maintainability and developer efficiency.",
+                      group: "Databases & Infrastructure",
+                      summary:
+                        "Working with relational and document databases based on product needs.",
+                      tools: [
+                        { Icon: Mongodb, title: "MongoDB" },
+                        { Icon: PostgreSQL, title: "PostgreSQL" },
+                        { Icon: S3, title: "S3 Bucket" }, 
+                      ],
                     },
                     {
-                      Icon: Sass,
-                      title: "Sass",
-                      description:
-                        "Proficient in Sass, utilizing its features to develop modular, maintainable, and scalable stylesheets with improved organization and efficiency.",
+                      group: "Tooling & Workflow",
+                      summary:
+                        "Maintaining clean workflows and collaborative development practices.",
+                      tools: [
+                        { Icon: Git, title: "Git" },
+                        { Icon: CICD, title: "CI/CD" },
+                      ],
                     },
-                    {
-                      Icon: Js,
-                      title: "JavaScript",
-                      description:
-                        "Skilled in JavaScript, building dynamic and interactive web features while maintaining performance and scalability.",
-                    },
-                    {
-                      Icon: Ts,
-                      title: "TypeScript",
-                      description:
-                        "Experienced in TypeScript, ensuring robust and maintainable code with static type checking and advanced JavaScript features.",
-                    },
-                    {
-                      Icon: ReactSvg,
-                      title: "React.js",
-                      description:
-                        "Proficient in React.js, utilizing hooks and state management to create dynamic, responsive user interfaces and seamless web experiences.",
-                    },
-                    {
-                      Icon: Next,
-                      title: "Next.js",
-                      description:
-                        "Experienced in Next.js, leveraging server-side rendering and static site generation for optimized and fast-loading web applications.",
-                    },
-                    {
-                      Icon: Nodejs,
-                      title: "Node.js",
-                      description:
-                        "Experienced in Node.js, building scalable server-side applications and efficiently managing backend services.",
-                    },
-                    {
-                      Icon: Mongodb,
-                      title: "MongoDB",
-                      description:
-                        "Proficient in MongoDB, leveraging its flexible schema design for scalable database solutions and efficient data management.",
-                    },
-                    {
-                      Icon: Express,
-                      title: "Express.js",
-                      description:
-                        "Proficient in Express.js, developing robust APIs and server-side applications with efficient routing and middleware integration.",
-                    },
-                    {
-                      Icon: Git,
-                      title: "Git",
-                      description:
-                        "Proficient in Git, managing version control effectively, collaborating on code, and maintaining an organized project history.",
-                    },
-                  ].map((tool, index) => (
-                    <motion.div
+                  ].map((section, index) => (
+                    <motion.section
                       key={index}
-                      initial={{ opacity: 0, y: 50 }}
+                      initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8 }}
-                      className="tool"
-                      style={{ willChange: "opacity, transform" }}
+                      transition={{ duration: 0.6 }}
+                      className="tool_group"
                     >
-                      <div className="glassmophorism">
-                        <tool.Icon />
+                      <header className="tool_group_header">
+                        <h2>{section.group}</h2>
+                        <p>{section.summary}</p>
+                      </header>
+
+                      <div className="tool_group_items">
+                        {section.tools.map((tool, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4 }}
+                            className="tool"
+                          >
+                            <div className="glassmophorism">
+                              <tool.Icon />
+                            </div>
+                            <article>
+                              <h3>{tool.title}</h3>
+                            </article>
+                          </motion.div>
+                        ))}
                       </div>
-                      <article>
-                        <h2>{tool.title}</h2>
-                        <p>{tool.description}</p>
-                      </article>
-                    </motion.div>
+                    </motion.section>
                   ))}
                 </div>
               </div>
@@ -376,9 +361,9 @@ const Home = () => {
                             variant="outlined"
                             onClick={() =>
                               window.open(
-                                "https://www.moposhluxury.com/",
+                                "https://moposhluxury.vercel.app/",
                                 "_blank",
-                                "noopener,noreferrer"
+                                "noopener,noreferrer",
                               )
                             }
                             sx={{
@@ -459,7 +444,7 @@ const Home = () => {
                               window.open(
                                 "https://mealsprint.vercel.app/",
                                 "_blank",
-                                "noopener,noreferrer"
+                                "noopener,noreferrer",
                               )
                             }
                             sx={{
@@ -540,7 +525,7 @@ const Home = () => {
                               window.open(
                                 "https://shoe-haven.vercel.app/",
                                 "_blank",
-                                "noopener,noreferrer"
+                                "noopener,noreferrer",
                               )
                             }
                             sx={{
@@ -621,7 +606,7 @@ const Home = () => {
                               window.open(
                                 "https://gridnews.onrender.com/",
                                 "_blank",
-                                "noopener,noreferrer"
+                                "noopener,noreferrer",
                               )
                             }
                             sx={{

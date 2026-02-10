@@ -9,7 +9,7 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import { Copyright, WhatsApp } from "@mui/icons-material";
-import PDF from "../assets/files/Paul-Oladipupo-CV.pdf";
+import PDF from "../assets/files/Paul Oladipupo — Software Dev.pdf";
 
 const SideBar = ({ isChecked }) => {
   const sidebarRef = useRef();

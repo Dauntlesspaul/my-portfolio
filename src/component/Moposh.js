@@ -53,7 +53,7 @@ function Moposh() {
               variant="outlined"
               onClick={() =>
                 window.open(
-                  "https://www.moposhluxury.com/",
+                  "https://moposhluxury.vercel.app/",
                   "_blank",
                   "noopener,noreferrer"
                 )
