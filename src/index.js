@@ -13,6 +13,7 @@ import GridNews from './pages/GridNews';
 import ScrollToTop from './component/ScrollToTop';
 import MealSprint from './pages/Mealsprint';
 import Moposh from './pages/Moposh';
+import Apartey from './pages/Apartey';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +28,7 @@ root.render(
         <Route path="/shoe-haven" element={<ShoeHaven />} />
         <Route path="/grid-news" element={<GridNews />} />
         <Route path="/mealsprint" element={<MealSprint />} />
+        <Route path="/apartey" element={<Apartey />} />
 
       </Routes>
     </BrowserRouter>

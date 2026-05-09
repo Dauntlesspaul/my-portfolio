@@ -8,6 +8,7 @@ import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
 import CasesOutlinedIcon from "@mui/icons-material/CasesOutlined";
 import Moposh from "../assets/images/moposh.png";
+import Apartey from "../assets/images/apartey.png";
 import ShoehavenImg from "../assets/images/shoehaven.png";
 import GridnewsImg from "../assets/images/gridnews.png";
 import Mealsprint from "../assets/images/mealsprint.png";
@@ -253,7 +254,7 @@ const Home = () => {
                       tools: [
                         { Icon: Mongodb, title: "MongoDB" },
                         { Icon: PostgreSQL, title: "PostgreSQL" },
-                        { Icon: S3, title: "S3 Bucket" }, 
+                        { Icon: S3, title: "S3 Bucket" },
                       ],
                     },
                     {
@@ -317,6 +318,88 @@ const Home = () => {
                 </div>
                 <p>Here are a few of my selected projects for you to explore</p>
                 <div className="project-md-query">
+                  {" "}
+                  <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    style={{ willChange: "opacity, transform" }}
+                    className="glass-container"
+                  >
+                    <div id="project" className="projects">
+                      <div className="set-container">
+                        <div className="project_img_container">
+                          <motion.img
+                            src={Apartey}
+                            alt="shoe haven"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </div>
+                        <h2>Apartey</h2>
+                        <p>
+                          This is a property listing and review platform. It
+                          helps future tenants make informed decisions while
+                          also providing property managers with valuable
+                          feedback to improve their offerings.
+                        </p>
+                      </div>
+                      <h2>PROJECT INFO</h2>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <h3>Year</h3>
+                        <p>2025</p>
+                      </div>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <h3>Type</h3>
+                        <p>Real Estate</p>
+                      </div>
+                      <hr className="seg_line2" />
+                      <div className="project_info">
+                        <span>
+                          <Button
+                            variant="outlined"
+                            onClick={() =>
+                              window.open(
+                                "https://apartey.com/",
+                                "_blank",
+                                "noopener,noreferrer",
+                              )
+                            }
+                            sx={{
+                              color: "rgb(100, 100, 239)",
+                              borderColor: "rgb(100, 100, 239)",
+                              my: 1.5,
+                              "&:hover": {
+                                borderColor: "rgb(100, 100, 239)",
+                              },
+                            }}
+                          >
+                            LIVE DEMO{" "}
+                            <LinkIcon sx={{ fontSize: "16px", ml: 0.8 }} />
+                          </Button>
+                        </span>
+                        <span>
+                          <Button
+                            variant="outlined"
+                            onClick={() => navigate("/apartey")}
+                            sx={{
+                              color: "rgb(100, 100, 239)",
+                              borderColor: "rgb(100, 100, 239)",
+                              my: 1.5,
+                              "&:hover": {
+                                borderColor: "rgb(100, 100, 239)",
+                              },
+                            }}
+                          >
+                            MORE INFO{" "}
+                            <InfoIcon sx={{ fontSize: "16px", ml: 0.8 }} />
+                          </Button>
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}

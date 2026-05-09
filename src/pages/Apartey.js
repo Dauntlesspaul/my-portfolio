@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useNavigate, Link } from "react-router-dom";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { IconButton, createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, IconButton, ThemeProvider } from "@mui/material";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import CasesOutlinedIcon from "@mui/icons-material/CasesOutlined";
+import AparteyImg from "../assets/images/apartey.png";
+import Apt1 from "../assets/images/apartey1.png";
+import Apt2 from "../assets/images/apartey2.png";
+import Apt3 from "../assets/images/apartey3.png";
+
 import XIcon from "@mui/icons-material/X";
 import EmailIcon from "@mui/icons-material/Email";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import SideBar from "../component/SideBar";
-import Mealsprint from "../component/Mealsprint";
-import Shoehaven from "../component/Shoehaven";
-import Gridnews from "../component/Gridnews";
-import Moposh from "../component/Moposh";
-import Apartey from "../component/Apartey";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import "../slick-custom.css";
 const theme = createTheme({
   components: {
     MuiSvgIcon: {
@@ -33,7 +37,17 @@ const theme = createTheme({
     },
   },
 });
-const Projects = () => {
+const images = [AparteyImg, Apt1, Apt2, Apt3];
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+};
+const Apartey = () => {
   const [isChecked, setChecked] = useState(false);
   const navigate = useNavigate();
   const handleChange = () => {
@@ -150,18 +164,69 @@ const Projects = () => {
                   sx={{ color: "rgb(99, 99, 99)", fontSize: "15px" }}
                 />
               </div>
-              <div className="content">
+              <div className="info-content">
                 <div className="project_header">
                   <h2>Featured Projects</h2>
                   <hr />
                 </div>
-                <p>Here are a few of my selected projects for you to explore</p>
-                <div className="project-md-query">
-                  <Apartey />
-                  <Moposh />
-                  <Mealsprint />
-                  <Shoehaven />
-                  <Gridnews />
+                <p>More info about Apartey</p>
+                <div className="info-query">
+                  <div className="carousel-set">
+                    <Slider {...settings}>
+                      {images.map((image, index) => (
+                        <div key={index}>
+                          <img
+                            src={image}
+                            alt={`Slide ${index + 1}`}
+                            style={{ width: "100%", height: "auto" }}
+                            loading="lazy"
+                          />
+                        </div>
+                      ))}
+                    </Slider>
+                  </div>
+                  <div className="info">
+                    <h2>Apartey</h2>
+                    <p>
+                      This is a property listing and review platform. It helps
+                      future tenants make informed decisions while also
+                      providing property managers with valuable feedback to
+                      improve their offerings.
+                    </p>
+                    <h2>PROJECT INFO</h2>
+                    <hr className="seg_line2" />
+                    <div className="project_info">
+                      <h3>Year</h3>
+                      <p>2025</p>
+                    </div>
+                    <hr className="seg_line2" />
+                    <div className="project_info">
+                      <h3>Type</h3>
+                      <p>Real Estate</p>
+                    </div>
+                    <hr className="seg_line2" />
+                    <h2>TOOLS USED</h2>
+                    <hr className="seg_line2" />
+                    <h3> 👉Tailwindcss</h3>
+                    <h3> 👉Nextjs</h3>
+                    <h3> 👉Express js</h3>
+                    <h3> 👉Mongo Database</h3>
+                    <h3> 👉AWS S3</h3>
+                    <h3> 👉Stripe</h3>
+                    <hr className="seg_line2" />
+                    <h2>FEATURES</h2>
+                    <hr className="seg_line2" />
+                    <h3>
+                      📌 Real-time notifications on equiry and property match
+                    </h3>
+                    <h3>📌 Property Sale, Rent and Swap</h3>
+                    <h3>
+                      📌 Property Suggestion based on location and preferences
+                    </h3>
+                    <h3>📌 Analytics dashboard</h3>
+                    <h3>📌 In app chat system system</h3>
+                    <h3>📌 CRM tools</h3>
+                  </div>
                 </div>
               </div>
             </div>
@@ -172,4 +237,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Apartey;
